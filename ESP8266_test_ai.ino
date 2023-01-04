@@ -1,4 +1,4 @@
-#define DEBUG true
+#define DEBUG false
 
 String sendData(String command, const int timeout, boolean debug){
     String response = "";
@@ -19,7 +19,6 @@ String sendData(String command, const int timeout, boolean debug){
 
 void setup()
 {
-  Serial.begin(115200);
   while(!Serial);
   Serial1.begin(115200);
   sendData("AT+RST\r\n",2000,DEBUG);
