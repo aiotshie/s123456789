@@ -19,6 +19,7 @@ String sendData(String command, const int timeout, boolean debug){
 
 void setup()
 {
+  Serial.begin(9600);
   while(!Serial);
   Serial1.begin(115200);
   sendData("AT+RST\r\n",2000,DEBUG);
@@ -31,9 +32,7 @@ void setup()
   if (sendData(commend,5000,DEBUG)){  
     Serial.print("Join AP success\r\n");
     Serial.print("IP:");
-    sendData("AT+CIFSR\r\n",5000,DEBUG);
-    sendData("AT+CIPSERVER=0\r\n",200,DEBUG);
-    sendData("AT+CIPMUX=0\r\n",200,DEBUG);
+    sendData("AT+CIFSR\r\n",85000,DEBUG);
   }
 }
 
